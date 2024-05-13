@@ -1,0 +1,15 @@
+.About-section {
+    border-top: 20px solid blue;
+    
+    position: relative;
+}
+.out{
+    left: 49%;
+    top:4%;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+background-color: black,opaci;
+    border:1px solid aliceblue;
+    border-radius: 20px;
+}

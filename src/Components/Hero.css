@@ -1,0 +1,55 @@
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #E3E4EC; /* Background color for the left side */
+    height: 90vh;
+    font-family: "Caveat", cursive;
+    border-bottom: 20px solid white;
+  }
+  
+  .hero-section h1 {
+    font-size: 3.5rem !important;
+  
+    font-weight: bold;
+    color: #333; /* Font color for the name */
+    color: #131022 !important;
+  }
+  
+  .profile-photo {
+    width: 150px;
+    padding: 10px;
+    height: 150px;
+   
+    border-radius: 40%; /* Make the image circular */
+    object-fit: cover;
+  }
+  
+  .video-container {
+    width: 50%; /* Adjust as needed */
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .video-container iframe {
+    width: 80%;
+    height: 100%;
+    border-radius: 50%;/* Make the iframe circular */
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .video-container {
+      width: 100%;
+      margin-top: 20px; /* Add some spacing between the name and the video on smaller screens */
+    }
+  }
+  
