@@ -1,15 +1,19 @@
-import React, { useContext, useState } from 'react';
+// contextprovider.jsx
+import React, { createContext, useState, useContext } from 'react';
 
-// Custom hook to use the ResumeContext
-export const useResume = () => useContext(ResumeContext);
+// Import ImageContext as the default export
+import ImageContext from './context';
 
-// ResumeProvider component to provide the resume context to the entire app
-export const ResumeProvider = ({ children }) => {
-  const [resume, setResume] = useState(null);
+// Custom hook to access the context
+export const useImageContext = () => useContext(ImageContext);
+
+// Provider component to wrap the entire application
+export const ImageProvider = ({ children }) => {
+  const [uploadedImage, setUploadedImage] = useState(null);
 
   return (
-    <ResumeContext.Provider value={{ resume, setResume }}>
+    <ImageContext.Provider value={{ uploadedImage, setUploadedImage }}>
       {children}
-    </ResumeContext.Provider>
+    </ImageContext.Provider>
   );
 };

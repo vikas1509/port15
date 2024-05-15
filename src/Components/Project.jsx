@@ -21,14 +21,13 @@ function Project({ projects }) {
             <p className="text-gray-700 text-justify mt-2">
               {project.description}
             </p>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-4 py-2 hover:text-white font-semibold  bg-gradient-to-r from-blue-600 via-blue-400 to-blue-500 text-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            {/* Replacing <a> tag with <button> */}
+            <button
+              onClick={() => window.open(project.link, "_blank")}
+              className="inline-block mt-4 px-4 py-2 hover:text-white font-semibold bg-gradient-to-r from-blue-600 via-blue-400 to-blue-500 text-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              🔗 {project.link}
-            </a>
+            See My Work
+            </button>
           </div>
         ))}
       </div>

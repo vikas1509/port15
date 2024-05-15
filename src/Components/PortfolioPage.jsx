@@ -5,8 +5,7 @@ import HeroSection from "./HeroSection";
 import About from "./About";
 import Skills from "./Skills";
 import Project from "./Project";
-import Footer from "./Contactme";
-import AwardsComponent from "./AwardsComponent";
+import AwardsComponent from "./AwardsComponent"; // Import the AwardsComponent
 import ContactMe from "./Contactme";
 
 function PortfolioPage() {
@@ -20,30 +19,13 @@ function PortfolioPage() {
     video,
     skills,
     projects,
-    awards,
-    contact,
+    awards, // Make sure awardsImage is received from location.state.formData
     roleDescription,
     resume,
   } = location.state.formData;
-  console.log(
-    name,
-    email,
-    github,
-    linkedin,
-    phone,
-    video,
-    skills,
-    projects,
-    awards
-  );
+// console.log(awardsImage,"atport");
 
-  const convertPhotosToUrlArray = (photos) => {
-    return photos.map((photo) => {
-      const blob = new Blob([photo], { type: "image/jpeg" });
-      return URL.createObjectURL(blob);
-    });
-  };
-
+console.log(video);
   return (
     <div className="portfolio-container drop-shadow-lg border shadow-md">
       <HeroSection name={name} videoLink={video} />
@@ -52,22 +34,10 @@ function PortfolioPage() {
       <Skills skills={skills} />
 
       <Project projects={projects} />
-      {awards.map(
-        (
-          aw,
-          index 
-        ) => (
-          <div key={index}>
-            {aw.photos && (
-              <AwardsComponent
-                key={index}
-                name={aw.name}
-                photos={convertPhotosToUrlArray(aw.photos)}
-              />
-            )}
-          </div>
-        )
-      )}
+
+      {/* Pass awardsImage to AwardsComponent */}
+      <AwardsComponent awards={awards} /> 
+
       <ContactMe
         email={email}
         github={github}

@@ -9,7 +9,7 @@
     position: absolute;
     height: 40px;
     width: 40px;
-background-color: black,opaci;
+    background-image: linear-gradient(135deg, #E3E4EC, #214ab1);
     border:1px solid aliceblue;
     border-radius: 20px;
 }
